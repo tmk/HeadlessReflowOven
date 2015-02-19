@@ -1,0 +1,25 @@
+Headless Reflow Oven Controller
+===============================
+Just with button, buzzer and LED, no LCD.
+
+This is based on work of ohararp ReflowOven.
+  https://github.com/ohararp/ReflowOven
+
+
+Requirements
+------------
+Arduino board
+  Duemialanove or any
+
+Solid State Relay
+  Fotek SSR-40-DA
+
+MAX31855 and Thermocouple-K
+  https://learn.adafruit.com/thermocouple/overview
+  https://www.adafruit.com/products/269
+
+Tactile Switch
+
+Piezzo Buzzer
+
+LED
