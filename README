@@ -1,9 +1,25 @@
 Headless Reflow Oven Controller
 ===============================
-Just with button, buzzer and LED, no LCD.
+Simple reflow oven controller just with button, buzzer and LED, no LCD.
 
-This is based on work of ohararp ReflowOven.
+
+This is based on work of ohararp ReflowOven,
   https://github.com/ohararp/ReflowOven
+
+which is modification of rocketscream Reflow-Oven-Controller.
+  https://github.com/rocketscream/Reflow-Oven-Controller
+
+rocketscream released the work under Creative Commons Share Alike v3.0 license.
+
+
+Licences
+--------
+This reflow oven controller hardware and firmware are released under the 
+Creative Commons Share Alike v3.0 license
+http://creativecommons.org/licenses/by-sa/3.0/ 
+You are free to take this piece of code, use it and modify it. 
+All we ask is attribution including the supporting libraries used in this 
+firmware.
 
 
 Requirements
@@ -23,3 +39,62 @@ Tactile Switch
 Piezzo Buzzer
 
 LED
+
+
+MAX31855 memo
+-------------
+Without capacitor between terminals of thermocouple it indicates lower temperature by around 10 deg, too fast read to charge sample capacitor of the chip? With 0.1uF the temperature looks good but change is slow, too big capacitance?  Shoud try 0.01uF instead.
+https://learn.adafruit.com/thermocouple/f-dot-a-q
+
+
+
+
+
+DIY Reflow Oven resources
+=========================
+
+Components
+----------
+Cold Junction compasation for Type-K
+    http://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/MAX6675.html
+    http://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/MAX31855.html
+    MAX6675     5V
+    MAX31855    3.3V
+
+Projects
+--------
+https://github.com/search?q=reflow+oven&ref=opensearch
+    Many projects are found on github.
+
+https://github.com/rocketscream/Reflow-Oven-Controller
+http://www.rocketscream.com/blog/portfolio-item/reflow-controller-shield/
+    OpenHardware/Software   $38
+    Arduino project with LCD, buzzer and PID control.
+    Schematic and Diptrace design files are available.
+
+https://github.com/estechnical/reflowOvenController
+http://www.estechnical.co.uk/
+    Replacement controller for T962 series ovens. It seems to be well maintained by ESTechnical.
+    Arduino based project but using 20MHz crystal. No hardware files?
+
+https://github.com/ohararp/ReflowOven
+    An Arduino project.
+    Hardware design files are available.
+    
+http://pleasantsoftware.com/developer/3d/reflow/
+https://github.com/zaggo/ReflowController/blob/master/PID.cpp
+    ATtiniy45, thermistor, mechanical relay, button and LED.
+
+
+http://hobbybotics.com/projects/hobbybotics-reflow-controller-v8-03/
+    It has detailed description about PID on oven.
+    Firmware and hardware design is available and PIC is used as controller.
+    MAX6675, PIC16F877A, LCD, PicBasic
+
+http://hforsten.com/toaster-oven-reflow-controller.html
+https://github.com/Ttl/reflow-controller
+    ATMega8U2, MAX31855
+
+
+https://github.com/UnifiedEngineering/T-962-improvements
+    T962 oven improvements
