@@ -47,6 +47,26 @@ Without capacitor between terminals of thermocouple it indicates lower temperatu
 https://learn.adafruit.com/thermocouple/f-dot-a-q
 
 
+Reset by connected with terminal
+--------------------------------
+It is not desirable particularly after it starts reflow. To avoid the reset see this page.
+120Ohm method didn't work for my Duemilanove but `stty /dev/ttySUB0 -hupcl` works on Linux.
+
+http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection
+
+
+Build with ino tool
+-------------------
+
+    $ ino build
+    $ ino upload
+
+or
+
+    $ avrdude -P/dev/ttyUSB0  -pm168 -c arduino -b19200 -U flash:w:.build/diecimila_atmega168/firmware
+
+http://inotool.org/quickstart
+http://inotool.org/
 
 
 
