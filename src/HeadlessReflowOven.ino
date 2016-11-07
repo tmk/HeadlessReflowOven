@@ -57,23 +57,45 @@ typedef enum REFLOW_STATUS
         |     <60s      |<-        60s        ->|                   |
         |     Preheat   |        Soaking        |       Reflow      |   Cool
      0  |_ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _|_ _ _ _
+
+    Almit leadfree TM-HP LFM-48W(Sn-3.0Ag-05Cu) Reflow Profile
+    http://www.somersetsolders.com/userfiles/file/solder_paste/almit_lead_free_reflow.pdf
+        |
+    235-|                                                  x  x
+        |                                                x       x
+    220-|                                               x           x
+        |                                              x|           |
+        |                                            x  |           | x
+    190-|                              x x x  x x  x    |           |   x
+        |                  x  x  x  x           |       |<- 20-50s->|     x
+    160-|               x                       |                   |
+        |             x |                       |                   |
+        |           x   |                       |                   |
+        |         x     |                       |                   |
+        |       x       |                       |                   |
+        |     x         |                       |                   |
+        |   x   1.5C/s  |        0.5C/s         |       1.5C/s      |   1.5C/s
+    30 -| x             |                       |                   |
+        |      90-130s  |<-     30-60s        ->|                   |
+        |     Preheat   |        Soaking        |       Reflow      |   Cool
+     0  |_ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _|_ _ _ _
 */
 float TEMPERATURE_COOL       = 100;
-float TEMPERATURE_SOAK_MIN   = 150;
-float TEMPERATURE_SOAK_MAX   = 170;
-float TEMPERATURE_REFLOW_MAX = 230;
+float TEMPERATURE_SOAK_MIN   = 160;
+float TEMPERATURE_SOAK_MAX   = 190;
+float TEMPERATURE_REFLOW_MAX = 240;
 
 // Preheat: 1.5C/s
 #define PREHEAT_TEMPERATURE_STEP    15
 #define PREHEAT_MS_STEP             10000
 
-// Soak: 20C/60s
-#define SOAK_TEMPERATURE_STEP       2
+// Soak: 30C/60s
+#define SOAK_TEMPERATURE_STEP       3
 #define SOAK_MS_STEP                6000
 
-// Reflow: 20C/20s
-#define REFLOW_TEMPERATURE_STEP     5
-#define REFLOW_MS_STEP              5000
+// Reflow: 30C/20s
+#define REFLOW_TEMPERATURE_STEP     6
+#define REFLOW_MS_STEP              4000
 
 
 // ***** PID PARAMETERS *****
@@ -181,6 +203,8 @@ void setup()   {
   // Set Relow Status = OFF
   reflowStatus = REFLOW_STATUS_OFF;
   StartTest = false;
+
+  Serial.print("For lead free\r\n");
 }
 
 // Begin Main Loop
