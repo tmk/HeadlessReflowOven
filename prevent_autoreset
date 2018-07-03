@@ -1,0 +1,3 @@
+#!/bin/sh
+# http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection
+stty -F /dev/ttyUSB0 -hupcl

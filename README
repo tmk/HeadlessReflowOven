@@ -68,6 +68,22 @@ or
 http://inotool.org/quickstart
 http://inotool.org/
 
+2018/07/03 ino doesn't work for no reason now. Use arduino command line instead.
+
+
+Build wit arduino command line
+------------------------------
+You will need to install follwing libraries under ~/Arduino/libraries to build.
+
+- PID_v1
+- Adafruit-MAX31855-library
+
+See this doc for options.
+
+https://github.com/arduino/Arduino/blob/master/build/shared/manpage.adoc
+
+    $ arduino --upload --pref build.path=./build-cli --board arduino:avr:diecimila -v --port /dev/ttyUSB0 src/HeadlessReflowOven.ino
+
 
 
 DIY Reflow Oven resources
