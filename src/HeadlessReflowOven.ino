@@ -204,7 +204,7 @@ void setup()   {
   reflowStatus = REFLOW_STATUS_OFF;
   StartTest = false;
 
-  Serial.print("For lead free\r\n");
+  Serial.print("HeadlessReflowOven for Lead Free build at " __DATE__ " " __TIME__ "\r\n");
 }
 
 // Begin Main Loop
